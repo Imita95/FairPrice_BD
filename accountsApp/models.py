@@ -12,7 +12,7 @@ class User(AbstractUser):
     
     role = models.CharField(max_length=20, choices=ROLE_CHOICES)
     phone_number = models.CharField(max_length=15)
-    address = models.TextField()
+    address = models.TextField(null=True)
     
     def str(self):
         return f"{self.username} - {self.role}"
