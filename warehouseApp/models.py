@@ -2,8 +2,8 @@ from django.db import models
 from accountsApp.models import User
 from farmarApp.models import FarmerProfile, Crop
 
-class WarehouseProfile(models.Model):
-    user = models.OneToOneField(User, on_delete=models.CASCADE)
+class WarehouseProfile(models.Model): 
+    user = models.OneToOneField(User, on_delete=models.CASCADE,null=True)
     license_number = models.CharField(max_length=50)
     storage_capacity = models.DecimalField(max_digits=12, decimal_places=2)
     location = models.CharField(max_length=100)
